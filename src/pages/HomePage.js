@@ -6,7 +6,6 @@ import {addHobby} from "../actions/hobby";
 export default function HomePage() {
     const hobbies = useSelector(state => state.hobby.list);
     const dispatch = useDispatch();
-    console.log('hobbies', hobbies);
 
     const clickAddHobby = () => {
         const hobby = {
