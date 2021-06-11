@@ -31,4 +31,26 @@ describe('Hobby reducer', () => {
             activeHobby: null
         })
     })
+
+    it('should handle SET_ACTIVE_HOBBY', function () {
+        expect(
+            reducer(undefined, actions.setActiveHobby(1))
+        ).toEqual({
+            list: [],
+            activeHobby: 1
+        })
+
+        expect(
+            reducer(
+                {
+                    list: [{id: 1, name: 'Hobby 1'}],
+                    activeHobby: null
+                },
+                actions.setActiveHobby(1)
+            )
+        ).toEqual({
+            list: [{id: 1, name: 'Hobby 1'}],
+            activeHobby: 1
+        })
+    });
 })

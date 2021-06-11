@@ -8,5 +8,13 @@ describe('actions', () => {
             payload: hobby
         }
         expect(actions.addHobby(hobby)).toEqual(expectedAction)
+    });
+    it('Should create an action to set active hobby', () => {
+        const activeHobby = 1;
+        const expectedAction = {
+            type: 'SET_ACTIVE_HOBBY',
+            payload: activeHobby
+        }
+        expect(actions.setActiveHobby(activeHobby)).toEqual(expectedAction)
     })
 })
