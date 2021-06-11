@@ -13,7 +13,9 @@ const hobbyReducer = (state = initialState, action) => {
             return newState;
         }
         case 'SET_ACTIVE_HOBBY': {
-            return state;
+            const newState = _.cloneDeep(state);
+            newState.activeHobby = action.payload;
+            return newState;
         }
         default:
             return state;
